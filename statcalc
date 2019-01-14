@@ -1,0 +1,39 @@
+from header import *
+async def statcalc(arg1,arg2,arg3,arg4):
+    if arg1 = none
+        await client.send_message(message.channel, "BST is not possible")
+        return
+    if arg2 = none
+        arg2 = 252
+    if arg3 = none
+        arg3 =31
+    if arg4 = none
+        arg4 = +
+    BST = arg1
+    BST = int(BST)
+    if BST > 252 or BST < 0 or not BST.isdigit():
+        await client.send_message(message.channel, "BST is not possible")
+        return
+    EV = arg2
+    EV = int(EV)
+    if EV >= 252 or EV =< 0 or not EV.isdigit():
+        await client.send_message(message.channel, "EV is not possible")
+        return
+    IV = arg3
+    IV = int(EV)
+    if IV >= 31 or IV =< 0 or not IV.isdigit():
+        await client.send_message(message.channel, "IV is not possible")
+        return
+    nature = arg4
+    if nature != + or nature!=0 or nature != -
+        await client.send_message(message.channel, "Nature is not possible")
+        return
+    Max = ((IV + 2 * BST + (EV/4))*lvl/100+5)*1.1
+    Nuetral =((IV + 2 * BST + (EV/4))*lvl/100+5)*1.0
+    Min =((IV + 2 * BST + (EV/4))*lvl/100+5)*0.9
+    if nature == '+':
+         await client.send_message(message.channel, int(Max))
+    if nature == '0':
+         await client.send_message(message.channel, int(Nuetral))
+    if nature == '-':
+         await client.send_message(message.channel, int(Min))
