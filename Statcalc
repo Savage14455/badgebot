@@ -1,39 +1,70 @@
 from header import *
-async def statcalc(arg1,arg2,arg3,arg4):
-    if arg1 = none
+async def statcalc(message,args):
+    arg = args.split()
+#BST
+    BST = arg[0]
+    if BST = none
         await client.send_message(message.channel, "BST is not possible")
         return
-    if arg2 = none
-        arg2 = 252
-    if arg3 = none
-        arg3 =31
-    if arg4 = none
-        arg4 = +
-    BST = arg1
-    BST = int(BST)
-    if BST > 252 or BST < 0 or not BST.isdigit():
+    elif not BST.isdigit():
         await client.send_message(message.channel, "BST is not possible")
+            return        
+    elif int(BST) > 252 or int(BST) < 0:
+            await client.send_message(message.channel, "BST is not possible")
+            return
+    else:
+        BST = int(BST)
+#EV
+    EV = arg[1]
+    if EV = none
+        EV = 252
+    elif not EV.isdigit():
+        await client.send_message(message.channel, "EVs are not possible")
         return
-    EV = arg2
-    EV = int(EV)
-    if EV >= 252 or EV =< 0 or not EV.isdigit():
-        await client.send_message(message.channel, "EV is not possible")
+    elif int(EV) >= 252 or int(EV) =< 0:
+        await client.send_message(message.channel, "EVs are not possible")
         return
-    IV = arg3
-    IV = int(EV)
-    if IV >= 31 or IV =< 0 or not IV.isdigit():
-        await client.send_message(message.channel, "IV is not possible")
-        return
-    nature = arg4
-    if nature != + or nature!=0 or nature != -
+    else:
+        EV = int(EV)      
+#IV
+    IV = arg[2]
+    if IV = none
+        IV = 31
+    elif not IV.isdigit():
+            await client.send_message(message.channel, "IVs are not possible")
+            return
+    elif int(IV) >= 31 or int(IV) =< 0:
+            await client.send_message(message.channel, "IV's are not possible")
+            return
+        else:
+            IV = int(IV)
+#Nature 
+    nature = arg[3]
+    if nature = none
+        nature = +
+    elif nature != + or nature!=0 or nature != -
         await client.send_message(message.channel, "Nature is not possible")
+        return    
+    else:
+        continue
+#Level 
+    lvl = arg[4]
+    if lvl = none
+        lvl = 100
+    elif not lvl.isdigit():
+        await client.send_message(message.channel, "Lvl is not possible")
         return
+    elif int(lvl) > 100 or int(lvl) <= 0:
+        await client.send_message(message.channel, "Lvl is not possible")
+        return
+    else:
+        lvl = int(lvl)
     Max = ((IV + 2 * BST + (EV/4))*lvl/100+5)*1.1
     Nuetral =((IV + 2 * BST + (EV/4))*lvl/100+5)*1.0
     Min =((IV + 2 * BST + (EV/4))*lvl/100+5)*0.9
     if nature == '+':
          await client.send_message(message.channel, int(Max))
-    if nature == '0':
+    elif nature == '0':
          await client.send_message(message.channel, int(Nuetral))
-    if nature == '-':
+    elif nature == '-':
          await client.send_message(message.channel, int(Min))
